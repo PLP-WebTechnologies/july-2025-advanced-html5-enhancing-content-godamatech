@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Form Assignment</title>
+    <meta name="description" content="An HTML5 page demonstrating lists, tables, media, and a complete form with validation.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header, main, footer {
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        form {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 700px;
+        }
+        fieldset {
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background: #eee;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Enhanced HTML5 Demo Page</h1>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#topics">Topics</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#form">Registration</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Topics List -->
+        <section id="topics">
+            <h2>Learning Topics</h2>
+            <ul>
+                <li>HTML5 Semantic Elements</li>
+                <li>Creating Lists and Tables</li>
+                <li>Embedding Media (Images, Audio, Video)</li>
+                <li>Building Accessible Forms</li>
+                <li>Applying HTML5 Validation</li>
+            </ul>
+        </section>
+
+        <!-- Table -->
+        <section id="schedule">
+            <h2>Event Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Topic</th>
+                        <th>Speaker</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00 AM</td>
+                        <td>mysoundduction to HTML5</td>
+                        <td>Ali Bala</td>
+                    </tr>
+                    <tr>
+                        <td>11:00 AM</td>
+                        <td>Building Accessible Forms</td>
+                        <td>Bobo Eze</td>
+                    </tr>
+                    <tr>
+                        <td>02:00 PM</td>
+                        <td>Media and SEO Practices</td>
+                        <td>Khalid Bukhari</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Media -->
+        <section id="media">
+            <h2>Event Highlights</h2>
+            <img src="event.jpg" alt="HTML5 Workshop Banner" width="100%">
+            <audio controls>
+                <source src="mysound.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <video controls width="100%">
+                <source src="promo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Registration Form -->
+        <section id="form">
+            <h2>Register for the Event</h2>
+            <form action="#" method="post" autocomplete="on">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required minlength="3">
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+2347012345678" required pattern="\+?[0-9]{10,15}">
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">-- Select --</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Prefer not to say</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Account Details</legend>
+                    
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="godama" readonly>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter a strong password" required minlength="6">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+
+                    <label>
+                        <input type="checkbox" name="updates" checked>
+                        Receive email updates
+                    </label>
+
+                    <label>
+                        <input type="radio" name="attendance" value="online" required>
+                        Attend Online
+                    </label>
+                    <label>
+                        <input type="radio" name="attendance" value="in-person">
+                        Attend In Person
+                    </label>
+
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Your message..."></textarea>
+                </fieldset>
+
+                <button type="submit">Submit Registration</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Abdullahi Bello. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
